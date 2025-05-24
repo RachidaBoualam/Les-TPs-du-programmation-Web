@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice 1 - Calculs entre deux nombres</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #resultats { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Exercice 1 : Calculs entre deux nombres</h1>
+  <button onclick="calculer()">Lancer le script</button>
+  <div id="resultats"></div>
+
+  <script>
+    function calculer() {
+      let a = parseFloat(prompt("Saisir le premier nombre :"));
+      let b = parseFloat(prompt("Saisir le deuxième nombre :"));
+
+      if (isNaN(a) || isNaN(b)) {
+        alert("Veuillez entrer des nombres valides !");
+        return;
+      }
+
+      let somme = a + b;
+      let difference = a - b;
+      let produit = a * b;
+      let quotient = b !== 0 ? (a / b) : "Impossible (division par zéro)";
+
+      document.getElementById("resultats").innerHTML =
+        "<p>Premier nombre : " + a + "</p>" +
+        "<p>Deuxième nombre : " + b + "</p>" +
+        "<p>Somme : " + somme + "</p>" +
+        "<p>Différence : " + difference + "</p>" +
+        "<p>Produit : " + produit + "</p>" +
+        "<p>Quotient : " + quotient + "</p>";
+    }
+  </script>
+</body>
+</html>
