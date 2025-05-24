@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeu de devinette</title>
+</head>
+<body>
+  <h1>Jeu :trouvez le nombre mystère entre 1 et 10</h1>
+  <button onclick="deviner()">Commencer</button>
+
+  <script>
+    function deviner() {
+      let nombreADeviner = Math.floor(Math.random() * 10) + 1; // entre 1 et 10
+      let tentative;
+      let essais = 0;
+
+      do {
+        tentative = parseInt(prompt("Saisez un nombre entre 1 et 10 :"));
+        essais++;
+
+        if (tentative < nombreADeviner) {
+          alert("Plus petit !");
+        } else if (tentative > nombreADeviner) {
+          alert("Plus grand !");
+        } else if (tentative === nombreADeviner) {
+          alert("Bravo ! Vous avez trouvé en " + essais + " tentative(s).");
+        } else {
+          alert("Entrée invalide !");
+        }
+      } while (tentative !== nombreADeviner);
+    }
+  </script>
+</body>
+</html>
