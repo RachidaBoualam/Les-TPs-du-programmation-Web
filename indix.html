@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emploi du Temps - Département Informatique</title>
+  <style>
+    td {
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function showProfInfo(nom) {
+      const profs = {
+        "K. Omari": "Prof. Kamal Omari\nEmail: omari@uiz.ac.ma\nSpécialité: Web Dynamique",
+        "A.Bouain": "Prof. Adelhadi Bouain\nEmail: bouain@univ.ma\nSpécialité: Génie Logiciel",
+        "M. Benaddy": "Prof. Mohamed Benaddy\nEmail: m.benaddy@uiz.ac.ma\nSpécialité: HIM",
+        "J. Oudami": "Prof. Jaouad Oudaani\nEmail: oudaani@univ.ma\nSpécialité: Mathématiques",
+        "A. El Mouatasim": "Prof. Abdelkarim El Mouatasim\nEmail: a.elmouatasim@uiz.ac.ma\nSpécialité: Modélisation"
+      };
+      alert(profs[nom] || "Information non disponible.");
+    }
+
+    function showCourseChapters(cours) {
+      const chapitres = {
+        "Programmation Web Dynamique": "Chapitre 1: HTML/CSS\nChapitre 2: JavaScript\nChapitre 3: PHP & MySQL",
+        "Génie Logiciel": "Chapitre 1: Méthodologies\nChapitre 2: UML\nChapitre 3: Gestion de projet",
+        "HIM": "Chapitre 1: Introduction à l'IHM\nChapitre 2: L'rgonomie IHM\nChapitre 3: Interface Homme Machine en Java(Swing)\nchapitre 4: Gestion du positionnement\nchapitre 5: Gestion des événements",
+        "Modélisation": "Chapitre 1: Outils d'optimisation\nChapitre 2: ptimisation sans contrainte\nChapitre 3: Régression\nChapitre 4: Clustering\nChapitre 5:  Optimisation sous contraintes\nChapitre 6: Optimisation avec contraintes linéaire "
+      };
+      alert(chapitres[cours] || "Chapitres non disponibles.");
+    }
+  </script>
+</head>
+<body>
+  <!-- En-tête inchangé -->
+  <table width="100%">
+    <tr>
+      <td align="left" width="34%">
+        <h3>Département Informatique<br>Filière : SMI</h3>
+      </td>
+      <td align="center" width="34%">
+        <img width="250px" height="100px" src="C:\Users\HP\Desktop\fpo.jpg">
+      </td>
+      <td align="right" width="34%">
+        <h3>Année Universitaire: 2024/2025<br>Semestre : S6</h3>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Emploi du temps -->
+  <table border="1" width="100%" cellspacing="0" cellpadding="5" align="center">
+    <tr>
+      <th colspan="7">
+        <h4 align="center">Emploi du temps provisoire SMI S6</h4>
+      </th>
+    </tr>
+    <tr bgcolor="#3F5E99">
+      <th></th>
+      <th>9h00-10h30</th>
+      <th>10h35-12h05</th>
+      <th>12h15-13h45</th>
+      <th>13h50-15h20</th>
+      <th>15h30-17h00</th>
+      <th>17h05-18h35</th>
+    </tr>
+
+    <tr>
+      <td><strong>Lundi</strong></td>
+      <td></td>
+      <td></td>
+      <td onclick="showCourseChapters('Programmation Web Dynamique')">Programmation Web Dynamique<br>
+        cours - Ampli A - 
+        <span onclick="event.stopPropagation(); showProfInfo('K. Omari')">Prof. K. Omari</span>
+      </td>
+      <td onclick="showCourseChapters('Programmation Web Dynamique')">Programmation Web Dynamique<br>
+        Td/Tp - Ampli A - 
+        <span onclick="event.stopPropagation(); showProfInfo('K. Omari')">Prof. K. Omari</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><strong>Mardi</strong></td>
+      <td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+
+    <tr>
+      <td><strong>Mercredi</strong></td>
+      <td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+
+    <tr>
+      <td><strong>Jeudi</strong></td>
+      <td></td>
+      <td></td>
+      <td onclick="showCourseChapters('Génie Logiciel')">Génie Logiciel<br>
+        cours - Ampli A - 
+        <span onclick="event.stopPropagation(); showProfInfo('A.Bouain')">Prof. A.Bouain</span>
+      </td>
+      <td onclick="showCourseChapters('Génie Logiciel')">Génie Logiciel<br>
+        Td/Tp - Ampli A - 
+        <span onclick="event.stopPropagation(); showProfInfo('A.Bouain')">Prof. A.Bouain</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><strong>Vendredi</strong></td>
+      <td></td>
+      <td></td>
+      <td bgcolor="#000000"></td>
+      <td bgcolor="#000000"></td>
+      <td onclick="showCourseChapters('HIM')">IHM cours - Ampli A<br>
+        <span onclick="event.stopPropagation(); showProfInfo('M. Benaddy')">Prof. M. Benaddy</span>
+      </td>
+      <td onclick="showCourseChapters('HIM')">IHM Td/Tp Ampli A<br>
+        <span onclick="event.stopPropagation(); showProfInfo('M. Benaddy')">Prof. M. Benaddy</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td><strong>Samedi</strong></td>
+      <td onclick="showCourseChapters('Modélisation')">Modélisation<br>
+        Td - Ampli A - 
+        <span onclick="event.stopPropagation(); showProfInfo('J. Oudami')">Prof. J. Oudaani</span>
+      </td>
+      <td onclick="showCourseChapters('Modélisation')">Modélisation<br>
+        cours - Ampli A - 
+        <span onclick="event.stopPropagation(); showProfInfo('A. El Mouatasim')">Prof. A. El Mouatasim</span>
+      </td>
+      <td></td><td></td><td></td><td></td>
+    </tr>
+  </table><br>
+
+  <table border="1" width="100%" align="center">
+    <tr>
+      <th>Les séances du vendredi</th>
+      <th>8h30-10h00</th>
+      <th>10h05-11h35</th>
+      <th>11h45-13h15</th>
+      <th bgcolor="#000000" width="150"></th>
+      <th>15h00-16h30</th>
+      <th>16h45-18h15</th>
+    </tr>
+  </table>
+</body>
+</html>
