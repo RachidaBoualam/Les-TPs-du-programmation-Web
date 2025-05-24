@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulaire d'Inscription</title>
+    </head>    
+<body>
+    <form>
+        <h2>Inscription Projet de Fin d'Études</h2>
+
+        <label for="nom">Nom :</label><br>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prenom">Prénom :</label><br>
+        <input type="text" id="prenom" name="prenom" required><br>
+
+        <label>Groupe :</label><br>
+        <div class="group-control">
+            <input type="number" id="groupNumber" name="groupe" value="1" min="1" readonly>
+            <button type="button" onclick="decrementGroup()">-</button>
+            <button type="button" onclick="incrementGroup()">+</button>
+        </div>
+
+        <label for="sujet">Sujet :</label><br>
+        <input type="text" id="sujet" name="sujet" required><br>
+
+        <label for="description">Description :</label><br>
+        <textarea id="description" name="description" rows="4" required></textarea><br>
+
+        <label for="dateDebut">Date de début :</label><br>
+        <input type="date" id="dateDebut" name="dateDebut" required><br><br>
+
+        <label for="dateFin">Date de fin :</label><br>
+        <input type="date" id="dateFin" name="dateFin" required><br>
+        <br>
+
+        <label for="encadrement">Encadrement :</label>
+        <select id="encadrement" name="encadrement" required>
+            <option value="">-- Sélectionner un professeur --</option>
+            <option value="prof1">Prof 1</option>
+            <option value="prof2">Prof 2</option>
+            <option value="prof3">Prof 3</option>
+        </select>
+
+        <div class="buttons"><br>
+            <button type="submit" class="submit-btn">Envoyer</button>
+
+
+            <button type="reset" class="cancel-btn">Annuler</button>
+        </div>
+
+    </form>
+
+
+</body>
+</html>
