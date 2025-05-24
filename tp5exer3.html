@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Interactif</title>
+</head>
+<body>
+  <h1>Quiz Interactif</h1>
+  <button onclick="lancerQuiz()">Démarrer le Quiz</button>
+
+  <script>
+    const QUESTIONS = [
+      ["Quelle est la capitale de la France ?", "Paris"],
+      ["Combien font 2 + 2 ?", "4"],
+      ["Quelle est la couleur du ciel par temps clair ?", "Bleu"],
+      ["Quelle langue parle-t-on au Brésil ?", "Portugais"],
+      ["Combien y a-t-il de continents ?", "7"]
+    ];
+    function lancerQuiz() {
+      let score = 0;
+
+      for (let i = 0; i < QUESTIONS.length; i++) {
+        const question = QUESTIONS[i][0];
+        const bonneReponse = QUESTIONS[i][1];
+
+        const reponseUtilisateur = prompt(question);
+
+        if (reponseUtilisateur !== null && reponseUtilisateur.trim().toLowerCase() === bonneReponse.toLowerCase()) {
+          alert("Réponse juste !");
+          score++;
+        } else {
+          alert("Réponse fausse !");
+        }
+      }
+      alert("Vous avez répondu correctement à " + score + " question(s) sur " + QUESTIONS.length + ".");
+    }
+  </script>
+</body>
+</html>
